@@ -1,0 +1,264 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Arial', sans-serif;
+  background: #D0F0C0;
+  color: #0f1923;
+}
+
+/* Header */
+.header {
+  background: #004953;
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-family: 'Syne', sans-serif;
+  font-size: 20px;
+  font-weight: 1000;
+  color: #F0E68C;
+}
+
+
+/* Main layout */
+.main {
+  max-width: 520px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem;
+}
+
+/* Locate card */
+.locate-card {
+  background-color: #004953;
+  border-radius: 18px;
+  padding: 1.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.locate-label {
+  font-size: 11px;
+  color: rgba(255,255,255,0.4);
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  margin-bottom: 4px;
+}
+
+.locate-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 19px;
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+.locate-btn {
+  width: 100%;
+  background: #f5a623;
+  color: #0f1923;
+  border: none;
+  border-radius: 10px;
+  padding: 0.75rem;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.locate-btn:hover { 
+    opacity: 0.88;
+    background-color:#F0E68C;
+ }
+.locate-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+
+.status-txt {
+  font-size: 12px;
+  color: rgba(255,255,255,0.45);
+  margin-top: 0.6rem;
+}
+
+/* Map */
+#map {
+  height: 220px;
+  border-radius: 14px;
+  margin-bottom: 1.25rem;
+  display: none;
+  border: 0.5px solid rgba(0,0,0,0.1);
+}
+
+/* Filter chips */
+.filter-row {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.chip {
+  padding: 6px 14px;
+  border-radius: 20px;
+  border: 0.5px solid rgba(0,0,0,0.1);
+  background: #fff;
+  font-size: 13px;
+  cursor: pointer;
+  color: #6b6b7a;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.chip.active {
+  background: #0f1923;
+  color: #fff;
+  border-color: #0f1923;
+}
+
+/* Station card */
+.station-card {
+  background: #fff;
+  border-radius: 14px;
+  border: 0.5px solid rgba(0,0,0,0.1);
+  padding: 1rem;
+  margin-bottom: 0.75rem;
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  cursor: pointer;
+}
+
+.station-card:hover {
+  border-color: #f5a623;
+}
+
+.rank {
+  width: 34px; height: 34px;
+  background: #f7f6f2;
+  border-radius: 9px;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  color: #6b6b7a;
+  flex-shrink: 0;
+}
+
+.rank.first { background: #f5a623; color: #0f1923; }
+
+.info { flex: 1; min-width: 0; }
+
+.sname {
+  font-family: 'Syne', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 2px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.saddr {
+  font-size: 12px;
+  color: #6b6b7a;
+  margin-bottom: 8px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.tags { display: flex; gap: 6px; flex-wrap: wrap; }
+
+.tag {
+  font-size: 11px;
+  padding: 3px 8px;
+  border-radius: 6px;
+  font-weight: 500;
+}
+
+.tag-open   { background: rgba(22,163,74,0.1);  color: #15803d; }
+.tag-closed { background: rgba(220,38,38,0.1);  color: #dc2626; }
+.tag-brand  { background: rgba(245,166,35,0.12); color: #92400e; }
+
+.sdist { text-align: right; flex-shrink: 0; }
+
+.dist-num {
+  font-family: 'Syne', sans-serif;
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.dist-unit { font-size: 11px; color: #6b6b7a; }
+
+.nav-btn {
+  margin-top: 8px;
+  background: #0f1923;
+  color: #fff;
+  border: none;
+  border-radius: 7px;
+  padding: 5px 10px;
+  font-size: 11px;
+  cursor: pointer;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.nav-btn:hover { opacity: 0.75; }
+
+.empty-txt {
+  text-align: center;
+  color: #6b6b7a;
+  padding: 3rem 1rem;
+  font-size: 14px;
+}
+
+/* Search UI */
+.search-container {
+  margin-bottom: 1rem;
+}
+
+.search-box {
+  display: flex;
+  gap: 8px;
+  background: #fff;
+  padding: 6px;
+  border-radius: 12px;
+  border: 1px solid rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+#search-input {
+  flex: 1;
+  border: none;
+  padding: 10px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  outline: none;
+}
+
+.search-btn {
+  background: #0f1923;
+  color: #fff;
+  border: none;
+  padding: 0 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+/* Fallback Box */
+.fallback-box {
+  background: #fff4e5;
+  border: 1px dashed #f5a623;
+  border-radius: 12px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.fallback-box p {
+  font-weight: 700;
+  color: #92400e;
+  margin-bottom: 4px;
+}
+
+.fallback-box span {
+  font-size: 12px;
+  color: #b45309;
+}

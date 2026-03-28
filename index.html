@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FuelFind</title>
+
+  <!-- Map styles -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+  <!-- Your styles -->
+  <link rel="stylesheet" href="styles1.css"/>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="logo">FuelFind</div>
+    <div id="count-badge" class="badge">Ready</div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main class="main">
+
+    <!-- Location card -->
+    <div class="locate-card">
+      <p class="locate-label">Your location</p>
+      <h2 class="locate-title" id="locate-title">Find nearest petrol stations</h2>
+      <button class="locate-btn" id="locate-btn" onclick="startLocate()">
+        Use my current location
+      </button>
+      <p class="status-txt" id="status-txt">Tap above to detect your location</p>
+    </div>
+
+    <!-- Map will appear here -->
+    <div id="map"></div>
+
+      <!-- SEARCH SECTION -->
+    <div class="search-container">
+      <div class="search-box">
+        <input type="text" id="search-input" placeholder="Enter Landmark or Pincode (e.g. Gachibowli or 500032)">
+        <button class="search-btn" onclick="searchByPlace()">Search Area</button>
+      </div>
+    </div>
+
+     <!-- Filter buttons -->
+    <div id="filter-row">
+      <button class="chip active" onclick="applyFilter('all', this)">All</button>
+      <button class="chip" onclick="applyFilter('open', this)">Open now</button>
+      <button class="chip" onclick="applyFilter('brand', this)">Has brand name</button>
+    </div>
+
+<!-- FALLBACK UI (Hidden by default) -->
+<div id="no-results-suggestion" style="display:none;" class="fallback-box">
+  <p>No pumps with traffic found nearby.</p>
+  <span>Try searching near a busier landmark like "Secunderabad Station" or "Hitech City".</span>
+</div>
+    <!-- Station list -->
+    <div id="results">
+      <p class="empty-txt">No stations loaded yet. Tap the button above.</p>
+    </div>
+
+  </main>
+
+  <!-- Leaflet JS (map library) -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <!-- Your script -->
+  <script src="index.js"></script>
+
+</body>
+</html>
